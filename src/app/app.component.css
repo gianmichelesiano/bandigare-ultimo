@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.demo-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-left: 10px;
+
+}
+
+
+.bandigare-img{
+   padding-top: 10px;
+   padding-left: 10px
+}
+
+.sposta-fig{
+   display: flex;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+
+.white-icon {
+    color: white;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.white-icon svg {
+    fill: white;
+}
