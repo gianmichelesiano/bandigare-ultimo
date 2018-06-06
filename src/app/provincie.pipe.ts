@@ -1,0 +1,11 @@
+
+import { Pipe, PipeTransform } from '@angular/core';
+
+
+@Pipe({name: 'provincie'})
+export class ProvinciePipe implements PipeTransform {
+  transform(value: string) : string {
+  	let prov = {'BG': 'Bergamo', 'BA': 'Bari', 'BL': 'Belluno', 'BN': 'Benevento', 'BO': 'Bologna', 'BI': 'Biella', 'BT': 'Barletta', 'BR': 'Brindisi', 'BS': 'Brescia', 'BZ': 'Bolzano', 'RE': 'Reggio Emilia', 'RG': 'Ragusa', 'RA': 'Ravenna', 'RC': 'Reggio Calabria', 'RM': 'Roma', 'RN': 'Rimini', 'RO': 'Rovigo', 'RI': 'Rieti', 'GR': 'Grosseto', 'GE': 'Genova', 'GO': 'Gorizia', 'OG': 'Ogliastra', 'OT': 'Olbia Tempio', 'OR': 'Oristano', 'PR': 'Parma', 'PV': 'Pavia', 'PT': 'Pistoia', 'PU': 'Pesaro Urbino', 'PZ': 'Potenza', 'PC': 'Piacenza', 'PA': 'Palermo', 'PG': 'Perugia', 'PD': 'Padova', 'PE': 'Pescara', 'PI': 'Pisa', 'PN': 'Pordenone', 'PO': 'Prato', 'EN': 'Enna', 'ME': 'Messina', 'MC': 'Macerata', 'MB': 'Monza Brianza', 'MO': 'Modena', 'MN': 'Mantova', 'MI': 'Milano', 'MT': 'Matera', 'VS': 'Medio Campidano', 'MS': 'Massa Carrara', 'VT': 'Viterbo', 'FR': 'Frosinone', 'FC': 'Forl\xec Cesena', 'FE': 'Ferrara', 'FG': 'Foggia', 'FI': 'Firenze', 'FM': 'Fermo', 'NO': 'Novara', 'NA': 'Napoli', 'UD': 'Udine', 'NU': 'Nuoro', 'CI': 'Carbonia Iglesias', 'CH': 'Chieti', 'CO': 'Como', 'CN': 'Cuneo', 'CL': 'Caltanissetta', 'CB': 'Campobasso', 'CA': 'Cagliari', 'CE': 'Caserta', 'CZ': 'Catanzaro', 'CS': 'Cosenza', 'CR': 'Cremona', 'CT': 'Catania', 'SS': 'Sassari', 'SR': 'Siracusa', 'SP': 'La Spezia', 'SV': 'Savona', 'KR': 'Crotone', 'SI': 'Siena', 'SO': 'Sondrio', 'SA': 'Salerno', 'LE': 'Lecce', 'LC': 'Lecco', 'TV': 'Treviso', 'LO': 'Lodi', 'TR': 'Terni', 'TS': 'Trieste', 'TP': 'Trapani', 'LI': 'Livorno', 'TN': 'Trento', 'TO': 'Torino', 'LT': 'Latina', 'LU': 'Lucca', 'TE': 'Teramo', 'TA': 'Taranto', 'VA': 'Varese', 'VB': 'Verbania', 'VC': 'Vercelli', 'VE': 'Venezia', 'AG': 'Agrigento', 'VI': 'Vicenza', 'IS': 'Isernia', 'AL': 'Alessandria', 'AO': 'Aosta', 'AN': 'Ancona', 'AQ': "L'Aquila", 'AP': 'Ascoli Piceno', 'VR': 'Verona', 'AR': 'Arezzo', 'IM': 'Imperia', 'AT': 'Asti', 'VV': 'Vibo Valentia', 'AV': 'Avellino'}
+    return prov[value];
+  }
+}

@@ -7,6 +7,7 @@ mat-card {
   max-width: 80%;
   margin: 2em auto;
   text-align: center;
+  height: 90vh;
 }
 
 mat-toolbar {
@@ -45,4 +46,12 @@ mat-toolbar {
 /* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
 .white-icon svg {
     fill: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-drawer-backdrop {
+    background: white !important;
 }

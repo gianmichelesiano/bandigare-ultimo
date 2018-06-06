@@ -1,31 +1,11 @@
 
-<!--   <mat-toolbar class="mat-elevation-z6" color="primary">
-    <div class="sposta-fig">
-      <img src="../../assets/img/logoBandiGare.png" class="demo-avatar">
-       <div class="bandigare-img">
-      <img  src="../../assets/img/BandiGare.png" height="30">
-       </div>
-    </div>
-
-    <div>
-      <button mat-raised-button color="primary">Home</button>
-      <button mat-raised-button color="primary">Ricerca</button>
-      <button mat-raised-button color="primary">Ultime inserite</button>
-      <button mat-raised-button color="primary">Gare in scadenza</button>
-      <button mat-raised-button color="accent">Login</button>
-    </div>
 
 
 
 
+<div style="height: 90vh;">
 
-
-  </mat-toolbar> -->
-
-
-<div style="height: 100vh;">
-
-  <mat-toolbar color="primary">
+   <mat-toolbar  class="mat-elevation-z6" color="primary">
 
     <div class="sposta-fig">
       <img src="../../assets/img/logoBandiGare.png" class="demo-avatar">
@@ -40,11 +20,9 @@
 
       <!-- The following menu items will be hidden on both SM and XS screen sizes -->
 
-      <button mat-raised-button color="primary">Home</button>
-      <button mat-raised-button color="primary">Ricerca</button>
-      <button mat-raised-button color="primary">Ultime inserite</button>
-      <button mat-raised-button color="primary">Gare in scadenza</button>
-      <button mat-raised-button color="accent">Login</button>
+      <button mat-raised-button color="primary" routerLink="">Home</button>
+      <button mat-raised-button color="primary" routerLink="/ricerca">Ricerca</button>
+      <button mat-raised-button color="accent" routerLink="/login">Login</button>
 
     </div>
 
@@ -62,38 +40,20 @@
 
       <div fxLayout="column">
 
-        <a (click)="sidenav.toggle()" mat-raised-button color="primary">Close</a>
+        <a (click)="sidenav.toggle()" mat-raised-button color="warn">Close</a>
 
-      <button mat-raised-button color="primary" (click)="sidenav.toggle()">Home</button>
-      <button mat-raised-button color="primary">Ricerca</button>
-      <button mat-raised-button color="primary">Ultime inserite</button>
-      <button mat-raised-button color="primary">Gare in scadenza</button>
-      <button mat-raised-button color="accent">Login</button>
+        <button mat-raised-button color="primary" routerLink="/" (click)="sidenav.toggle()">Home</button>
+        <button mat-raised-button color="primary" routerLink="/ricerca" (click)="sidenav.toggle()">Ricerca</button>
+        <button mat-raised-button color="accent" routerLink="/login" (click)="sidenav.toggle()">Login</button>
 
       </div>
 
     </mat-sidenav>
 
     <mat-sidenav-content fxFlexFill>
-
-      <mat-card *ngFor="let item of gare | async">
-         {{ item | json }}
-      </mat-card>
-
-
-
-      <span class="done">
-        <button mat-fab>
-          <mat-icon>check circle</mat-icon>
-        </button>
-      </span>
-
-  </mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
 
   </mat-sidenav-container>
 
 </div>
-
-
-
-

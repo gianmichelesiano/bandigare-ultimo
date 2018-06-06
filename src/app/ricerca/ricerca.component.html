@@ -1,0 +1,195 @@
+
+	<mat-card class="card-ricerca" *ngIf="moduloVisibile">
+
+            <div class="titolo-card"><h2>Ricerca</h2></div>
+			<div class="form-ricerca">
+			    <mat-select  required class="example-full-width-select" placeholder="Seleziona Tipologia"  [(ngModel)]="selectedTipologia.id" (ngModelChange)="onSelectTipologia(selectedTipologia.id)" [ngModelOptions]="{standalone: true}">
+	                <mat-option *ngFor="let tipologia of tipologie" value= {{tipologia.id}}>{{tipologia.name}}
+	                </mat-option>
+	            </mat-select>
+            </div>
+
+            <div class="form-ricerca">
+	            <mat-select  class="example-full-width-select" placeholder="Seleziona Categoria"  [(ngModel)]="selectedCategoria.id"      [ngModelOptions]="{standalone: true}">
+	                <mat-option *ngFor="let categoria of categorie " value= {{categoria.id}}>{{categoria.name}}
+	                </mat-option>
+	            </mat-select>
+            </div>
+
+            <div class="form-ricerca">
+	            <mat-select  class="example-full-width-select" placeholder="Seleziona Regione"  [(ngModel)]="selectedRegione.id"     (ngModelChange)="onSelectRegione(selectedRegione.id)"  [ngModelOptions]="{standalone: true}">
+	                <mat-option  *ngFor="let regione of regioni" value= {{regione.id}}>{{regione.name}}
+	                </mat-option>
+	            </mat-select>
+            </div>
+
+            <div class="form-ricerca">
+	            <mat-select  class="example-full-width-select" placeholder="Seleziona Provincia"  [(ngModel)]="selectedProvincia.id"      [ngModelOptions]="{standalone: true}">
+	                <mat-option  *ngFor="let provincia of provincie" value= {{provincia.id}}>{{provincia.name}}
+	                </mat-option>
+	            </mat-select>
+            </div>
+
+			<br>
+			 <p class="form-ricerca">
+			    <button mat-raised-button color="warn" (click)="doRicerca(selectedTipologia.id, selectedCategoria.id, selectedRegione.id , selectedProvincia.id)">Cerca</button>
+			 </p> 
+
+
+	</mat-card>
+
+
+    
+
+	<div *ngIf = "message !=''">
+		<mat-card>
+			<h3>{{ message }} </h3>	
+		</mat-card>
+
+
+	    <div class="search-results"
+	            infinite-scroll
+	            [infiniteScrollDistance]="1"
+	            [infiniteScrollThrottle]="50"
+	         (scrolled)="onScrollDown()">
+
+
+		<mat-card *ngFor="let gara of gareScroll">
+
+			<div class="flex-container">
+			  <div class="titolo-card" *ngIf="gara.ENTE"><h3>Ente: {{gara.ENTE}}</h3></div>
+
+			  <div class="row-image-card">
+			  	 <div *ngIf="gara.REGIONE">
+			  	    <img class="image-card" src="../../../assets/image/REGIONI/{{gara.REGIONE}}.png">
+			  	 </div>
+			  	 <div class="info-card">
+			  	       <div class="info-luoghi" *ngIf="gara.REGIONE">
+			  	       		<div class="larg-tit">
+			  	       			Regione:
+			  	       		</div>
+			  	       	    <div>
+			  	       			{{gara.REGIONE | capit}}
+			  	       		</div>
+			  	       </div>
+
+			  	       <div class="info-luoghi" *ngIf="gara.PROVINCIA">
+			  	       		<div class="larg-tit">
+			  	       			Provincia:
+			  	       		</div>
+			  	       	    <div>
+			  	       			{{gara.PROVINCIA | provincie}}
+			  	        </div>
+			  	       </div>
+			  	       <div class="info-luoghi" *ngIf="gara.CITTA">
+			  	       		<div class="larg-tit">
+			  	       			Comune:
+			  	       		</div>
+			  	       	    <div>
+			  	       			{{gara.CITTA | capit }}
+			  	           </div>
+			  	       </div>
+			  	 </div>
+			  </div>
+
+
+			  <div class="info-row">
+			  		<div class="info-item" *ngIf="gara.TIPOLOGIA">
+				  	  	<div class="larg-tit">
+				  	       	Tipologia:
+				  	    </div>
+				  	    <div>
+				            {{gara.TIPOLOGIA | capit}}
+				  	    </div>
+				  	</div>
+				  	<div class="info-item" *ngIf="gara.PROCEDURA">
+				  	  	<div class="larg-tit">
+				  	       	Procedura:
+				  	    </div>
+				  	    <div>
+				            {{gara.PROCEDURA | capit}}
+				  	    </div>
+				  	</div>
+
+
+			  </div>
+
+			  <div class="info-row">
+			  	<div class="info-item" *ngIf = "gara.CATEGORIA_PREVALENTE != ''">
+			  	  	<div class="larg-tit">
+			  	       	Categoria:
+			  	    </div>
+			  	    <div>
+			            {{gara.CATEGORIA_PREVALENTE | capit}}
+			  	    </div>
+			  	</div>
+
+
+			    <div class="info-item" *ngIf = "gara.CATEGORIA_PREVALENTE == ''">
+			  	  	<div class="larg-tit">
+			  	       	CPV:
+			  	    </div>
+			  	    <div>
+			            {{gara.CPV | capit}}
+			  	    </div>
+			  	</div>
+
+			  </div>
+
+			  <div class="oggetto-card" *ngIf="gara.OGGETTO">
+			  	  	<div class="larg-tit">
+			  	       	Oggetto:
+			  	    </div>
+			  	    <div>
+	                   {{gara.OGGETTO | capit}}
+			  	    </div>
+
+			  </div>
+
+			 <div class="info-row">
+				  	<div class="info-item" *ngIf="gara.IMPORTO">
+				  	  	<div class="larg-tit">
+				  	       	Importo:
+				  	    </div>
+				  	    <div>
+				            {{gara.IMPORTO | importo | currency:'EUR'}}
+				  	    </div>
+				  	</div>
+
+				  	<div class="info-item" *ngIf="gara.DATA_SCADENZA">
+				  	  	<div class="larg-tit">
+				  	       	Scadenza:
+				  	    </div>
+				  	    <div>
+				            {{gara.DATA_SCADENZA*1000 | date: 'dd/MM/yy' :'it'}}
+				  	    </div>
+				  	</div>
+			  </div>
+
+
+			 </div>
+
+
+			 <div class="info-row">
+				  	<div class="info-item" *ngIf="gara.mylink.length>0">
+				  	  	<div class="larg-tit-ris">
+				  	       	Risorse:
+				  	    </div>
+						<div class="downladLink">
+					        <div *ngFor="let link of gara.mylink">
+					             <a mat-button color="warn" target="_blank" href="{{link.valore}}">{{link.chiave}}</a>
+					        </div>
+				        </div>
+				  	</div>
+			  </div>
+		</mat-card>
+
+
+	    </div>
+	</div>
+
+<span class="done" *ngIf = "message !=''">
+   <button mat-raised-button color="warn" (click)="nuovaRicerca()">Nuova Ricerca</button>
+</span>
+
+

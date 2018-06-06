@@ -1,2 +1,9 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+.mat-drawer-backdrop {
+    background: white !important;
+}
+
+.mat-drawer {
+    background: black !important;
+}

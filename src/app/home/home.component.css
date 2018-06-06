@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.demo-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-left: 10px;
+
+}
+
+
+.bandigare-img{
+   padding-top: 10px;
+   padding-left: 10px
+}
+
+.sposta-fig{
+   display: flex;
+}
+
+.done {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+
+
+.white-icon {
+    color: white;
+}
+/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
+.white-icon svg {
+    fill: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+#container {
+  height: 300px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+}
+
+#containerBar {
+  height: 400px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+
+}
+
+#containerBox {
+  height: 400px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+}
+
+#myBar{
+  height: 650px;
+  width: 1800px;
+
+}
+
+
+
+#myChart {
+  height: 120px;
+  flex-basis: 120px;
+}
+
+.count_top{
+  font-size: 15px
+}
+
+.count{
+  font-size: 30px;
+  text-align: center;
+  padding: 20px
+}
+
+.count_bottomplus{
+  font-size: 15px;
+  color : #388e3c;
+}
+
+.count_bottomminus{
+  font-size: 15px;
+  color : #FF9800;
+}
+
+
+
+#myDoughnut{
+  height: 300px;
+  flex-basis: 300px;
+}
+
+
+.example-full-width {
+  width: 100%;
+}
+
+
+
+.Site-client-content {
+  flex: 1;
+  min-height: 100vh;
+}
+
+
+.example-full-width-select {
+     width: 100%;
+}
+
+ td {
+    padding: 15px;
+
+}
+
+.form-ricerca{
+  padding: 15px;
+}
+
+
+.example-header-image {
+  
+  background-size: cover;
+  border-radius: 8px;
+  width: 80px;
+}
+
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-direction:column
+}
+
+.titolo-card {
+    text-align: center;
+    color: #388E3C;
+}
+
+.row-image-card{
+  display: flex;
+  flex-direction:flex-start;
+}
+
+
+.image-card{
+
+    border-radius: 4px;
+    padding: 5px;
+    width: 80px;
+}
+
+.info-card{
+   padding: 5px;
+
+   display: flex;
+   flex-direction:column;
+   margin-left:10px;
+   justify-content:space-around
+}
+
+.info-luoghi{
+  display: flex;
+}
+
+.larg-tit{
+  min-width: 95px;
+  font-weight: bold;
+  
+}
+
+.larg-tit-ris{
+   min-width: 95px;
+   font-weight: bold;
+   padding-top: 8px;
+}
+
+.oggetto-card{
+  display: flex;
+  padding: 10px;
+
+}
+
+.info-row{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.info-item{
+  display: flex;
+}
+
+.data-scad{
+  min-width: 120px
+}
+
+.dettaglio{
+  padding-top: 30px
+}
+
+
+.card-ricerca {
+  width: 100%;
+  min-height: 400px;
+}
+
+.ricerca{
+  min-height: 700px;
+}
+
+
+.mat-expansion-panel-header-title {
+    color: #ff5722;;
+}
+
+.mat-fab-bottom-right{
+    position: fixed !important;
+}
+
+.downladLink{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap;
+
+}
+  
+.done {
+  position: fixed;
+  bottom: 30px;
+  right: 60px;
+  color: white;
+}
+
+.sposta-titolo {
+  text-align: center;
+  vertical-align: middle;
+}
