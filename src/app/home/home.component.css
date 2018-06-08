@@ -266,4 +266,10 @@ mat-card {
 .sposta-titolo {
   text-align: center;
   vertical-align: middle;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.paginazione{
+  text-align: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

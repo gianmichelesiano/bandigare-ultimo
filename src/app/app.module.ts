@@ -31,18 +31,19 @@ import { ProvinciePipe } from './provincie.pipe';
 import { ImportoPipe } from './importo.pipe';
 import { CapitPipe } from './capit.pipe';
 import { ScorporabiliPipe } from './scorporabili.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import {
   MatButtonModule,
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
-  MatSidenavModule,
+  MatSidenavModule, 
   MatCardModule,
   MatFormFieldModule,
   MatSnackBarModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule, 
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -94,7 +95,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgxPaginationModule
 
   ],
   providers: [

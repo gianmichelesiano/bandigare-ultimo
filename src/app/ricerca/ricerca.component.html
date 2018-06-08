@@ -40,21 +40,16 @@
 
 
     
-
+<div id="onTop"> 
 	<div *ngIf = "message !=''">
 		<mat-card>
-			<h3>{{ message }} </h3>	
+			<h3 style="color: #f44336">{{ message }} </h3>	
+			<h3 *ngIf="gareScroll.length>10">Pagina n. {{ p }} </h3>	
 		</mat-card>
 
 
-	    <div class="search-results"
-	            infinite-scroll
-	            [infiniteScrollDistance]="1"
-	            [infiniteScrollThrottle]="50"
-	         (scrolled)="onScrollDown()">
 
-
-		<mat-card *ngFor="let gara of gareScroll">
+		<mat-card *ngFor="let gara of gareScroll | paginate: { itemsPerPage: 10, currentPage: p }">
 
 			<div class="flex-container">
 			  <div class="titolo-card" *ngIf="gara.ENTE"><h3>Ente: {{gara.ENTE}}</h3></div>
@@ -185,11 +180,13 @@
 		</mat-card>
 
 
-	    </div>
+		<div class="paginazione">
+			<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>	
+		</div>
 	</div>
 
 <span class="done" *ngIf = "message !=''">
    <button mat-raised-button color="warn" (click)="nuovaRicerca()">Nuova Ricerca</button>
 </span>
 
-
+</div>

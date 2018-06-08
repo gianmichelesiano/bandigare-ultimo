@@ -62,6 +62,8 @@ export class RicercaComponent implements OnInit {
 
   panelOpenState: boolean = false;
 
+  p: number = 1;
+
 
   constructor(private _mydataService: MyDataService, public snackBar: MatSnackBar, protected localStorage: LocalStorage) { 
 
@@ -79,6 +81,7 @@ export class RicercaComponent implements OnInit {
     this.selectedCategoria.id = 'TT'
     this.selectedRegione.id = 0
     this.selectedProvincia.id = 'TT'
+
   }
 
 
@@ -176,7 +179,7 @@ export class RicercaComponent implements OnInit {
             }
             this.gare = gareProvincia
            	console.log(this.gare)
-    			  for (let i = 0; i < this.sum; ++i) {
+    			  for (let i = 0; i < this.gare.length; ++i) {
     			  	 if (typeof(this.gare[i]) !== 'undefined'){
     		                let arrayDownload = this.getInfoDownload(this.gare[i].DOWNLOAD)
     		                let arrayInfoAggintive = this.getInfoDownload(this.gare[i].DOWNLOAD)
@@ -188,16 +191,11 @@ export class RicercaComponent implements OnInit {
     			  }
 
   		      if (this.gareScroll.length>0){
-  		          this.message = 'Sono state trovate '+this.gare.length+' gare. Scorri verso il basso per vedere tutte'
+  		          this.message = 'Sono state trovate '+this.gare.length+' gare.'
   		      } else {
   		         this.message = 'Nessuna gara trovata'
   		      } 
 
-
-
-
-       console.log(this.regioni)
-       console.log(regioneName.toUpperCase())
        
     }
 
@@ -213,35 +211,20 @@ export class RicercaComponent implements OnInit {
    this.gareScroll = [];
    this.gare = [];
    this.moduloVisibile = true
+   this.p = 1
 
  }
 
-  onScrollDown () {
-    console.log('scrolled!!');
-    const start = this.sum;
 
-    if (this.gare.length != this.gareScroll.length){
-          if (this.gareScroll.length-this.gare.length){
-        this.sum += 20;
-          } else {
-            this.sum = this.gare.length-this.gareScroll.length
-          }
+   pageChanged(e){
+     console.log('1')
 
-          // add another 20 items    
-          for (let i = start; i < this.sum; ++i) {
 
-                let arrayDownload = this.getInfoDownload(this.gare[i].value.DOWNLOAD)
-                let arrayInfoAggintive = this.getInfoDownload(this.gare[i].value.INFO_AGGIUNTIVE)
-                let arrayRetDownload = arrayDownload.concat(arrayInfoAggintive);
+     document.getElementById("onTop").scrollIntoView();
+     this.p = e
+     console.log('2')
+   }
 
-                this.gare[i]['mylink'] = arrayRetDownload
-                this.gareScroll.push(this.gare[i]);
-   
-          }
-
-    }
-
-  }
 
   apriDettaglio(gara){
     console.log(gara)

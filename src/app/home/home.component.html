@@ -26,14 +26,9 @@
   <div class="sposta-titolo">
   <h1>Ultime Gare Inserite</h1>
   </div>
-	    <div class="search-results"
-	            infinite-scroll
-	            [infiniteScrollDistance]="1"
-	            [infiniteScrollThrottle]="50"
-	         (scrolled)="onScrollDown()">
 
-
-		<mat-card *ngFor="let gara of gareScroll">
+		<mat-card *ngFor="let gara of gareScroll | paginate: { itemsPerPage: 10, currentPage: p }">
+	
 
 			<div class="flex-container">
 			  <div class="titolo-card" *ngIf="gara.ENTE"><h3>Ente: {{gara.ENTE}}</h3></div>
@@ -162,6 +157,12 @@
 				  	</div>
 			  </div>
 		</mat-card>
+
+		<div class="paginazione">
+			<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>	
+		</div>
+
+
 
 
 	 

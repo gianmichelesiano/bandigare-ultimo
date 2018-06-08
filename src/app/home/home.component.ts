@@ -27,7 +27,11 @@ export class HomeComponent implements OnInit {
 
   gareScroll = [];
 
-  public gare :any = [];
+  gare  = [];
+
+  p: number = 1;
+
+
 
   
   sum = 20;
@@ -59,8 +63,11 @@ export class HomeComponent implements OnInit {
            this.nuoveGareServizio = Math.floor((this.servizi/20) + 30);
            this.nuoveGareForniture = Math.floor((this.forniture/20) + 20);
 
+
+
            this.gare = gareArray.sort().reverse()
-           for (let i = 0; i < this.sum; ++i) {
+
+           for (let i = 0; i < this.gare.length; ++i) {
              if (typeof(this.gare[i]) !== 'undefined'){
                       let arrayDownload = this.getInfoDownload(this.gare[i].DOWNLOAD)
                       let arrayInfoAggintive = this.getInfoDownload(this.gare[i].DOWNLOAD)
@@ -70,14 +77,9 @@ export class HomeComponent implements OnInit {
                       this.gareScroll.push(this.gare[i]);         
              }
            }
-           console.log("this.gareScroll")
-           console.log(this.gareScroll)
+
            
       });
-
-
-
-
    } 
 
    ngAfterViewInit(){
@@ -85,33 +87,13 @@ export class HomeComponent implements OnInit {
 
    }       
 
-  onScrollDown () {
-    console.log('scrolled!!');
-    const start = this.sum;
+   pageChanged(e){
+     location.href = "#";
+     location.href = "#container";
+     this.p = e
 
-    if (this.gare.length != this.gareScroll.length){
-          if (this.gareScroll.length-this.gare.length){
-        this.sum += 20;
-          } else {
-            this.sum = this.gare.length-this.gareScroll.length
-          }
+   }
 
-          // add another 20 items    
-          for (let i = start; i < this.sum; ++i) {
-
-                let arrayDownload = this.getInfoDownload(this.gare[i].value.DOWNLOAD)
-                let arrayInfoAggintive = this.getInfoDownload(this.gare[i].value.INFO_AGGIUNTIVE)
-                let arrayRetDownload = arrayDownload.concat(arrayInfoAggintive);
-
-                this.gare[i]['mylink'] = arrayRetDownload
-                this.gareScroll.push(this.gare[i]);
-   
-          }
-
-
-    }
-
-  }
 
   apriDettaglio(gara){
     console.log(gara)
