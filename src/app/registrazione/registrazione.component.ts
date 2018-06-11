@@ -11,6 +11,7 @@ import {MatSnackBar} from '@angular/material';
 
 export interface FormModel {
   captcha?: string;
+
 }
 
 @Component({
@@ -23,7 +24,9 @@ export interface FormModel {
 
 export class RegistrazioneComponent {
 
-
+  email: any;
+  password: any;
+  nome: any;
   public formModel: FormModel = {};
 
   state: string = '';
@@ -32,6 +35,7 @@ export class RegistrazioneComponent {
   recaptcha: string = ''
   messagge : string = ''
   messaggioCampi : string = ''
+
 
 
 

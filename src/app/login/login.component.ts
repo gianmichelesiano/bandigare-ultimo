@@ -14,6 +14,10 @@ export class LoginComponent  {
   state: string = '';
   error: any;
   authState: any = null;
+  email: any;
+  password: any;
+  nome: any;
+
 
   constructor(public af: AngularFireAuth,private router: Router, public as:AuthenticationService) {
   }

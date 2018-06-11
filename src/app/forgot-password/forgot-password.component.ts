@@ -7,6 +7,10 @@ import * as firebase from 'firebase';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent implements OnInit {
+  error: any;
+  email: any;
+  password: any;
+  nome: any;
 
   constructor() { }
 
