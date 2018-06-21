@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorage } from '@ngx-pwa/local-storage';
+
 import { Observable } from 'rxjs';
 import { AngularFireDatabase , AngularFireObject} from 'angularfire2/database';
 
@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
 
   gareObj: Observable<any>;
   gareObject: AngularFireObject<any>;
+
+  showSpinner:boolean = true
 
 
   totali = 0
@@ -36,7 +38,7 @@ export class HomeComponent implements OnInit {
   
   sum = 20;
 
-  constructor(protected localStorage: LocalStorage, private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
 
@@ -77,7 +79,7 @@ export class HomeComponent implements OnInit {
                       this.gareScroll.push(this.gare[i]);         
              }
            }
-
+            this.showSpinner = false
            
       });
    } 

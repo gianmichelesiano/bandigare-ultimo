@@ -273,3 +273,8 @@ mat-card {
   text-align: center;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.center-spin{
+    margin: auto;
+    width: 5%;
+}

@@ -8,7 +8,7 @@ import { Regione } from '../services/regioni';
 import { Provincia } from '../services/provincia';
 import {AppSettings} from '../appSettings';
 import {MatSnackBar} from '@angular/material';
-import { LocalStorage } from '@ngx-pwa/local-storage';
+
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
@@ -65,7 +65,7 @@ export class RicercaComponent implements OnInit {
   p: number = 1;
 
 
-  constructor(private _mydataService: MyDataService, public snackBar: MatSnackBar, protected localStorage: LocalStorage) { 
+  constructor(private _mydataService: MyDataService, public snackBar: MatSnackBar) { 
 
 
     this.tipologie = this._mydataService.getTipologia();

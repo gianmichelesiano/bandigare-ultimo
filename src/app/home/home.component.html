@@ -24,7 +24,11 @@
 	  </mat-card>
    </div>
   <div class="sposta-titolo">
-  <h1>Ultime Gare Inserite</h1>
+  <h1>Ultime Gare Inserite</h1> 
+
+  </div>
+  <div class="center-spin">
+  	<mat-spinner *ngIf="showSpinner"></mat-spinner>
   </div>
 
 		<mat-card *ngFor="let gara of gareScroll | paginate: { itemsPerPage: 10, currentPage: p }">

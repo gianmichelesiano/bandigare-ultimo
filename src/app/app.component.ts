@@ -1,7 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { AngularFireDatabase , AngularFireObject} from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import { LocalStorage } from '@ngx-pwa/local-storage';
+
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   gareObj: Observable<any>;
   gareObject: AngularFireObject<any>;
 
-  constructor(private db: AngularFireDatabase, protected localStorage: LocalStorage) {
+  constructor(private db: AngularFireDatabase) {
 
 
   }

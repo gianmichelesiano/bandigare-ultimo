@@ -16,7 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { LocalStorageModule } from '@ngx-pwa/local-storage'; 
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { RouterModule, Routes} from '@angular/router';
@@ -43,7 +43,8 @@ import {
   MatFormFieldModule,
   MatSnackBarModule,
   MatSelectModule,
-  MatInputModule, 
+  MatInputModule,
+  MatProgressSpinnerModule,
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -89,7 +90,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
     MatFormFieldModule,
     MatSnackBarModule,
     MatSelectModule,
-    LocalStorageModule,
+    MatProgressSpinnerModule,
     InfiniteScrollModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
