@@ -98,7 +98,7 @@ export class RicercaComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('inizio')
+    
   }
 
  doRicerca(tipologiaId, categoriaId, regioneId, provinciaId){

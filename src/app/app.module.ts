@@ -21,6 +21,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { RouterModule, Routes} from '@angular/router';
 import { AuthenticationService } from './authentication.service';
+import { AuthGuardService } from './auth-guard.service';
 import { RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 import { LOCALE_ID } from '@angular/core';
 
@@ -32,6 +33,7 @@ import { ImportoPipe } from './importo.pipe';
 import { CapitPipe } from './capit.pipe';
 import { ScorporabiliPipe } from './scorporabili.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {ReactiveFormsModule} from "@angular/forms"; 
 
 import {
   MatButtonModule,
@@ -70,6 +72,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
     CapitPipe,
     ScorporabiliPipe,
 
+
   ],
   imports: [
     BrowserModule,
@@ -97,12 +100,14 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
 
   ],
   providers: [
     AuthenticationService,
     MyDataService,
+    AuthGuardService,
     {
       provide: RECAPTCHA_LANGUAGE,
       useValue: 'it', 

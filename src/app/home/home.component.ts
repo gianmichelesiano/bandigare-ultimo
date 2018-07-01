@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFireDatabase , AngularFireObject} from 'angularfire2/database';
 
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   
   sum = 20;
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private router: Router) { }
 
   ngOnInit() {
 
@@ -157,6 +157,10 @@ export class HomeComponent implements OnInit {
 
     return arrayRetDownload
 
+  }
+
+  nuovaRicerca(){
+    this.router.navigate(['/ricerca']); 
   }
   
  }

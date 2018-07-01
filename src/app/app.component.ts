@@ -1,6 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { AngularFireDatabase , AngularFireObject} from 'angularfire2/database';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from './authentication.service';
 
 
 import { HomeComponent } from './home/home.component';
@@ -10,7 +11,7 @@ import { RegistrazioneComponent } from './registrazione/registrazione.component'
 import { RicercaComponent } from './ricerca/ricerca.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ActivatedRoute,Router, Routes} from '@angular/router';
-
+import { AuthGuardService as AuthGuard  } from './auth-guard.service';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +19,8 @@ export const appRoutes: Routes = [
   { path: 'logout', component: LogoutComponent} ,
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'registrazione', component: RegistrazioneComponent },
-  { path: 'ricerca', component: RicercaComponent },
+  { path: 'ricerca', component: RicercaComponent , canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' }
 ]
 
 
@@ -32,14 +34,17 @@ export class AppComponent implements OnInit {
   gare: Observable<any[]>;
   gareObj: Observable<any>;
   gareObject: AngularFireObject<any>;
+  isAuth:boolean=false;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, public auth: AuthenticationService) {
 
 
   }
 
   ngOnInit() {
-
+    this.isAuth = this.auth.authenticated
+    console.log("this.isAuth")
+     console.log(this.isAuth)
   }
 
 

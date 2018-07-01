@@ -20,13 +20,12 @@ export class LoginComponent  {
 
 
   constructor(public af: AngularFireAuth,private router: Router, public as:AuthenticationService) {
+
   }
 
   onSubmit(formData) {
     //console.log(formData.value)
-  	if(formData.valid){
-  		console.log(formData.value);
-      
+  	if(formData.valid){    
 
       this.af.auth.signInWithEmailAndPassword(formData.value.email,formData.value.password).then(
             (success) => {
@@ -34,7 +33,6 @@ export class LoginComponent  {
              this.router.navigate(['/']);         
           }).catch(
             (err) => {
-            console.log(err);
             this.error = err;
           })
   	}

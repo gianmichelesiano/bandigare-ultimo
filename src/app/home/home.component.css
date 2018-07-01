@@ -278,3 +278,10 @@ mat-card {
     margin: auto;
     width: 5%;
 }
+
+.done {
+  position: fixed;
+  bottom: 30px;
+  right: 60px;
+  color: white;
+}

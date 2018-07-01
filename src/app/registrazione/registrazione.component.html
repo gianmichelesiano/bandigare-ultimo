@@ -1,6 +1,6 @@
 
 
-<form #formatata='ngForm' (ngSubmit)="onSubmit(formatata)">
+<!-- <form #formatata='ngForm' (ngSubmit)="onSubmit(formatata)">
   <p class="image_logo">
     <img src="../../assets/img/icon1.png" height=150px   />
   </p>  
@@ -23,7 +23,7 @@
   </mat-form-field>
   <br><br>
 
-<re-captcha (resolved)="resolved($event)" siteKey="6LeMilQUAAAAACHsOMqPepmGxjEm36nOPqqCr7Jq"></re-captcha> 
+      <re-captcha (resolved)="resolved($event)" siteKey="6LeMilQUAAAAACHsOMqPepmGxjEm36nOPqqCr7Jq"></re-captcha> 
      <div>
         {{messagge}}
      </div>
@@ -31,5 +31,89 @@
      <p class="button-align">
       <button mat-raised-button color="warn" type="submit" name="action">Invia</button><br><br>
       </p>
-    </form >
+  </form > -->
 
+
+<!--   <form [formGroup]="registrationForm">
+  <p class="image_logo">
+    <img src="../../assets/img/icon1.png" height=150px   />
+  </p>  
+
+  <p class="text_login">
+    <b>Registrazione nuovo utente</b>
+  </p> 
+
+
+  
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <br><br>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Password" type="password" formControlName="password">
+  </mat-form-field>
+  <br><br>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nome" type="text" formControlName="nome">
+  </mat-form-field>
+  <br><br>
+
+ 
+
+  <p class="button-align">
+      <button mat-raised-button color="warn" type="submit" name="action">Invia</button><br><br>
+  </p>
+</form>
+
+ <p>Form value: {{ registrationForm.value | json }}</p>
+ <p>Form status: {{ registrationForm.status | json }}</p> -->
+
+
+
+
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm)">
+    <p class="image_logo">
+      <img src="../../assets/img/icon1.png" height=150px   />
+    </p> 
+
+    <p class="text_login">
+      <b>Registrazione nuovo utente</b>
+    </p> 
+
+    <span class="error" *ngIf="error">{{ error }}</span>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getMailErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br><br>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" type="password" [formControl]="password" required>
+      <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br><br>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nome" [formControl]="nome" required>
+      <mat-error *ngIf="nome.invalid">{{getNomeErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br><br>
+
+    <re-captcha (resolved)="resolved($event)" siteKey="6LeMilQUAAAAACHsOMqPepmGxjEm36nOPqqCr7Jq"></re-captcha> 
+     <div class="mat-error ng-star-inserted">
+        {{messagge}}
+     </div>
+
+  <p class="button-align">
+      <button mat-raised-button color="warn" type="submit" name="action" [disabled]="!registrationForm.valid ">Invia</button><br><br>
+  </p>
+  </form>
+
+<!-- <p>Form value: {{ registrationForm.value | json }}</p>
+ <p>Form status: {{ registrationForm.status | json }}</p> -->
