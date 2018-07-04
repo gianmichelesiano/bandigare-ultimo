@@ -17,7 +17,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { FlexLayoutModule } from "@angular/flex-layout";
+
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { RouterModule, Routes} from '@angular/router';
 import { AuthenticationService } from './authentication.service';
@@ -34,6 +34,7 @@ import { CapitPipe } from './capit.pipe';
 import { ScorporabiliPipe } from './scorporabili.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {ReactiveFormsModule} from "@angular/forms"; 
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {
   MatButtonModule,
@@ -101,7 +102,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     AngularFireDatabaseModule,
     NgxPaginationModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
 
   ],
   providers: [

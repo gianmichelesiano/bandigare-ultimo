@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
   p: number = 1;
 
 
+  onlyUnique(value, index, self) { 
+      return self.indexOf(value) === index;
+  }
+
 
   
   sum = 20;

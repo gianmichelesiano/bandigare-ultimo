@@ -195,15 +195,27 @@ mat-card {
 }
 
 .larg-tit{
-  min-width: 95px;
+  padding-right: 5px;
   font-weight: bold;
   
 }
 
+.larg-tit-sopra{
+  padding-right: 5px;
+  font-weight: bold;
+  
+}
+
+.sposta-row{
+  margin-top: 14px;
+  margin-left: 15px;
+}
+
+
 .larg-tit-ris{
    min-width: 95px;
    font-weight: bold;
-   padding-top: 8px;
+   padding-top: 10px;
 }
 
 .oggetto-card{

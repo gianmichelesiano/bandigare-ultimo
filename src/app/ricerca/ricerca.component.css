@@ -73,29 +73,34 @@ mat-card {
 .info-luoghi{
   display: flex;
 }
-
 .larg-tit{
-	min-width: 95px;
+  padding-right: 5px;
   font-weight: bold;
   
 }
 
+.larg-tit-sopra{
+  padding-right: 5px;
+  font-weight: bold;
+  
+}
+
+.sposta-row{
+  margin-top: 14px;
+  margin-left: 15px;
+}
+
+
 .larg-tit-ris{
    min-width: 95px;
    font-weight: bold;
-   padding-top: 8px;
+   padding-top: 10px;
 }
 
 .oggetto-card{
-	display: flex;
-	padding: 10px;
+  display: flex;
+  padding: 10px;
 
-}
-
-.info-row{
-	display: flex;
-	justify-content: space-between;
-	padding: 10px;
 }
 
 .info-item{
