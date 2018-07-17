@@ -1,0 +1,154 @@
+.example-full-width {
+  width: 100%;
+}
+
+
+
+.Site-client-content {
+  flex: 1;
+  min-height: 100vh;
+}
+
+
+.example-full-width-select {
+     width: 100%;
+}
+
+ td {
+    padding: 15px;
+
+}
+
+.form-ricerca{
+  padding: 15px;
+}
+
+
+.example-header-image {
+  
+  background-size: cover;
+  border-radius: 8px;
+  width: 80px;
+}
+
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-direction:column
+}
+
+.titolo-card {
+    text-align: center;
+    color: #388E3C;
+}
+
+.row-image-card{
+	display: flex;
+	flex-direction:flex-start;
+}
+
+
+.image-card{
+
+    border-radius: 4px;
+    padding: 5px;
+    width: 80px;
+}
+
+.info-card{
+   padding: 5px;
+
+   display: flex;
+   flex-direction:column;
+   margin-left:10px;
+   justify-content:space-around
+}
+
+.info-luoghi{
+  display: flex;
+}
+.larg-tit{
+  padding-right: 5px;
+  font-weight: bold;
+  
+}
+
+.larg-tit-sopra{
+  padding-right: 5px;
+  font-weight: bold;
+  
+}
+
+.sposta-row{
+  margin-top: 14px;
+  margin-left: 15px;
+}
+
+
+.larg-tit-ris{
+   min-width: 95px;
+   font-weight: bold;
+   padding-top: 10px;
+}
+
+.oggetto-card{
+  display: flex;
+  padding: 10px;
+
+}
+
+.info-item{
+	display: flex;
+}
+
+.data-scad{
+	min-width: 120px
+}
+
+.dettaglio{
+	padding-top: 30px
+}
+
+
+.card-ricerca {
+  width: 100%;
+  min-height: 400px;
+}
+
+.ricerca{
+  min-height: 700px;
+}
+
+
+.mat-expansion-panel-header-title {
+    color: #ff5722;;
+}
+
+.mat-fab-bottom-right{
+    position: fixed !important;
+}
+
+.downladLink{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:  wrap;
+
+}
+  
+.done {
+  position: fixed;
+  bottom: 30px;
+  right: 60px;
+  color: white;
+}
+
+.paginazione{
+  text-align: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

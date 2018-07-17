@@ -18,7 +18,6 @@ export class ForgotPasswordComponent implements OnInit {
   onSubmit(formData) {
   	if(formData.valid){
       var auth = firebase.auth();
-  		console.log(formData.value);
       return auth.sendPasswordResetEmail(formData.value.email)
         .then(() => console.log("email sent"))
         .catch((error) => console.log(error))

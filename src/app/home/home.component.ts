@@ -49,8 +49,7 @@ export class HomeComponent implements OnInit {
       this.db.object('gare').snapshotChanges().subscribe(action => {
           localStorage.setItem("gareLocal", JSON.stringify(action.payload.val()));
           let gareLocal = JSON.parse(localStorage.getItem('gareLocal'))
-           console.log(gareLocal)
-           console.log(typeof gareLocal)
+
 
            let gareArray = []
            for (let key in gareLocal) {
@@ -75,7 +74,7 @@ export class HomeComponent implements OnInit {
 
            for (let i = 0; i < this.gare.length; ++i) {
              if (typeof(this.gare[i]) !== 'undefined'){
-                      console.log(this.gare[i])
+      
                       let arrayDownload = this.getInfoDownload(this.gare[i].DOWNLOAD)
                       let arrayInfoAggintive = this.getInfoDownload(this.gare[i].INFO_AGGIUNTIVE)
                       let arrayRetDownload = arrayDownload.concat(arrayInfoAggintive);
@@ -103,7 +102,7 @@ export class HomeComponent implements OnInit {
 
 
   apriDettaglio(gara){
-    console.log(gara)
+  
   }
 
   getInfoDownload(garaDownload){

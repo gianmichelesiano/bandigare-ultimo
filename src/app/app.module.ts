@@ -56,6 +56,7 @@ import { RegistrazioneComponent } from './registrazione/registrazione.component'
 import { RicercaComponent } from './ricerca/ricerca.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { DettaglioGaraComponent } from './dettaglio-gara/dettaglio-gara.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { RecaptchaModule } from 'ng-recaptcha';
     ImportoPipe,
     CapitPipe,
     ScorporabiliPipe,
+    DettaglioGaraComponent,
 
 
   ],

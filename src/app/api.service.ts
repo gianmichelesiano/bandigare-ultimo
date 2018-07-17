@@ -24,8 +24,7 @@ export class ApiService {
 
 	  this.http.get(this.apiAddress + '/makePayment/?amount='+amount+'&token='+token).subscribe((data) => {
 		   //let retVal = JSON.parse(data)
-		   console.log("data")
-		   console.log(data)
+
 	  })
  }
 

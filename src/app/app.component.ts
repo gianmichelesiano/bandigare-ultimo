@@ -12,6 +12,7 @@ import { RicercaComponent } from './ricerca/ricerca.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ActivatedRoute,Router, Routes} from '@angular/router';
 import { AuthGuardService as AuthGuard  } from './auth-guard.service';
+import { DettaglioGaraComponent } from './dettaglio-gara/dettaglio-gara.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ export const appRoutes: Routes = [
   { path: 'logout', component: LogoutComponent} ,
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'registrazione', component: RegistrazioneComponent },
+  { path: 'dettaglio', component: DettaglioGaraComponent },
   { path: 'ricerca', component: RicercaComponent , canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ]
@@ -43,8 +45,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isAuth = this.auth.authenticated
-    console.log("this.isAuth")
-     console.log(this.isAuth)
   }
 
 

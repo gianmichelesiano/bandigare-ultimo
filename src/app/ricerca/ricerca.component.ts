@@ -76,7 +76,7 @@ export class RicercaComponent implements OnInit {
   }
 
   Pulisci(){
-    console.log('pul')
+   
     this.selectedTipologia.id = 1
     this.selectedCategoria.id = 'TT'
     this.selectedRegione.id = 0
@@ -88,7 +88,7 @@ export class RicercaComponent implements OnInit {
 
 
   onSelectTipologia(tipologiaid) {
-    console.log(tipologiaid)
+
     //this.tipologie = this._mydataService.getTipologia();
     this.categorie = this._mydataService.getCategoria().filter((item)=> item.tipologiaid == tipologiaid);
   }
@@ -103,7 +103,6 @@ export class RicercaComponent implements OnInit {
 
  doRicerca(tipologiaId, categoriaId, regioneId, provinciaId){
    
-   console.log(tipologiaId, categoriaId, regioneId, provinciaId)
    this.moduloVisibile = false
 
    let tip = ''
@@ -142,20 +141,12 @@ export class RicercaComponent implements OnInit {
        }
 
        let gareLocal = JSON.parse(localStorage.getItem('gareLocal'))
-       console.log(gareLocal)
-       console.log(typeof gareLocal)
+
 
        let gareArray = []
        for (let key in gareLocal) {
           gareArray.push(gareLocal[key]);
       }
-
-      console.log("gareArray")
-      console.log(gareArray)
-
-
-
-
 
        	   gareTipologia = gareArray.filter(item => item.TIPOLOGIA === tip);
             if (categoriaId === 'TT') {
@@ -178,7 +169,7 @@ export class RicercaComponent implements OnInit {
             	gareProvincia = gareRegioni.filter(item => item.PROVINCIA === provinciaId);
             }
             this.gare = gareProvincia
-           	console.log(this.gare)
+
     			  for (let i = 0; i < this.gare.length; ++i) {
     			  	 if (typeof(this.gare[i]) !== 'undefined'){
     		                let arrayDownload = this.getInfoDownload(this.gare[i].DOWNLOAD)
@@ -217,17 +208,14 @@ export class RicercaComponent implements OnInit {
 
 
    pageChanged(e){
-     console.log('1')
-
-
      document.getElementById("onTop").scrollIntoView();
      this.p = e
-     console.log('2')
+
    }
 
 
   apriDettaglio(gara){
-    console.log(gara)
+
   }
 
   getInfoDownload(garaDownload){
@@ -301,7 +289,7 @@ export class RicercaComponent implements OnInit {
          for (var key in objectInfoAggiuntive) {
            if (key.toUpperCase().includes('MAIL')){
                  let mail = objectInfoAggiuntive[key]
-                 console.log('mail')
+    
            } else {
                 if (key.toUpperCase().includes('LINK')){
                   etichetta = "Apri sito web";

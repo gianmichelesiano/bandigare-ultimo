@@ -1,0 +1,86 @@
+		<mat-card>
+
+
+			<div fxLayout="column" fxLayoutAlign="space-around none">
+
+			  <div class="titolo-card" *ngIf="gara.ENTE">
+			  	<h3>Ente: {{gara.ENTE}}</h3>
+			  </div>
+
+			  <div class="row-image-card">
+			  	 <div *ngIf="gara.REGIONE">
+			  	    <img class="image-card" src="../../../assets/image/REGIONI/{{gara.REGIONE}}.png">
+			  	 </div>
+			  	 <div fxLayout="column" fxLayoutAlign="space-around" >
+
+			  	 		<div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.REGIONE">
+			  	      <!--  <div class="info-luoghi" *ngIf="gara.REGIONE"> -->
+			  	       		<div class="larg-tit-sopra">Regione:</div>
+			  	       	    <div>{{gara.REGIONE | capit}}</div>
+			  	       </div>
+
+			  	       <div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.PROVINCIA">
+<!-- 			  	       <div class="info-luoghi" *ngIf="gara.PROVINCIA"> -->
+			  	       		<div class="larg-tit-sopra">Provincia:</div>
+			  	       	    <div>{{gara.PROVINCIA | provincie}}</div>
+			  	       </div>
+			  	
+			  	       <div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.CITTA">
+			  	       		<div class="larg-tit-sopra">Comune:</div>
+			  	       	    <div>{{gara.CITTA | capit }}</div>
+			  	       </div>
+			  	 </div>
+			  </div>
+
+
+	
+
+	
+	  		   <div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.TIPOLOGIA" class='sposta-row'>
+	  	       		<div class="larg-tit">Tipologia:</div>
+	  	       	    <div>{{gara.TIPOLOGIA | capit }}</div>
+	  	       </div>
+	  	      	<div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.PROCEDURA" class='sposta-row'>
+	  	       		<div class="larg-tit">Procedura:</div>
+	  	       	    <div>{{gara.PROCEDURA | capit }}</div>
+	  	       </div>
+		
+	  		   <div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.CATEGORIA_PREVALENTE" class='sposta-row'>
+	  	       		<div class="larg-tit">Categoria:</div>
+	  	       	    <div>{{gara.CATEGORIA_PREVALENTE | capit}}</div>
+	  	       </div>
+	  	      	<div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.CPV" class='sposta-row'>
+	  	       		<div class="larg-tit">CPV:</div>
+	  	       	    <div> {{gara.CPV | capit}}</div>
+	  	       </div>
+
+	  	       	<div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.OGGETTO" class='sposta-row'>
+	  	       		<div class="larg-tit">Oggetto:</div>
+	  	       	    <div>{{gara.OGGETTO | capit}}</div>
+	  	       </div>
+
+	  	       	<div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.IMPORTO" class='sposta-row'>
+	  	       		<div class="larg-tit">Importo:</div>
+	  	       	    <div>{{gara.IMPORTO | importo | currency:'EUR'}}</div>
+	  	       </div>
+
+	  	       	<div fxLayout="row wrap" fxLayoutAlign=" start" *ngIf="gara.DATA_SCADENZA" class='sposta-row'>
+	  	       		<div class="larg-tit">Scadenza:</div>
+	  	       	    <div> {{gara.DATA_SCADENZA*1000 | date: 'dd/MM/yy' :'it'}}</div>
+	  	       </div>
+
+	  	       	<div fxLayout="row wrap" fxLayoutAlign=" start">
+				  	<div class="info-item" *ngIf="gara.mylink.length>0">
+				  	  	<div class="larg-tit-ris">
+				  	       	Risorse:
+				  	    </div>
+						<div class="downladLink">
+					        <div *ngFor="let link of gara.mylink">
+					             <a mat-button color="warn" target="_blank" href="{{link.valore}}">{{link.chiave}}</a>
+					        </div>
+				        </div>
+				    </div>
+	  	       </div>
+			 </div>
+			 
+		</mat-card>
