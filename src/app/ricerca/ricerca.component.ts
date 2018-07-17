@@ -182,7 +182,7 @@ export class RicercaComponent implements OnInit {
     			  for (let i = 0; i < this.gare.length; ++i) {
     			  	 if (typeof(this.gare[i]) !== 'undefined'){
     		                let arrayDownload = this.getInfoDownload(this.gare[i].DOWNLOAD)
-    		                let arrayInfoAggintive = this.getInfoDownload(this.gare[i].DOWNLOAD)
+    		                let arrayInfoAggintive = this.getInfoDownload(this.gare[i].INFO_AGGIUNTIVE)
     		                let arrayRetDownload = arrayDownload.concat(arrayInfoAggintive);
 
     		                this.gare[i]['mylink'] = arrayRetDownload
